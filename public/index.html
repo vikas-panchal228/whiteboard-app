@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Collaborative Whiteboard Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="login-overlay">
+        <div class="login-box">
+            <h2>Whiteboard</h2>
+            <p class="room-hint">Your Room ID is below — share it with others so they can join.<br>Or paste a friend's
+                Room ID to join their session.</p>
+            <input type="text" id="username-input" placeholder="Your Name..."
+                onkeydown="if(event.key==='Enter') joinSession()" class="name-input">
+            <div class="room-id-row">
+                <input type="text" id="room-id-input" placeholder="Room ID..."
+                    onkeydown="if(event.key==='Enter') joinSession()">
+                <button onclick="copyRoomId()" class="copy-btn">Copy</button>
+            </div>
+            <button onclick="joinSession()" class="primary-btn">Join Room</button>
+        </div>
+    </div>
+
+    <div class="controls">
+        <div class="room-control">
+            <input type="text" id="room-id" value="default" onkeydown="if(event.key==='Enter') changeRoom()">
+            <button onclick="changeRoom()" class="action-btn">Room</button>
+        </div>
+
+        <div class="divider"></div>
+        <button class="tool-btn active" id="pen-btn" onclick="setTool('pen')">✏️ Pen</button>
+        <button class="tool-btn" id="eraser-btn" onclick="setTool('eraser')">🧽 Eraser</button>
+        <button class="tool-btn" id="text-btn" onclick="setTool('text')">🔤 Text</button>
+
+
+        <div class="dropdown">
+            <button class="tool-btn" id="shape-btn">Shapes ▾</button>
+            <div class="dropdown-content">
+                <button onclick="setTool('rect')">Rectangle</button>
+                <button onclick="setTool('circle')">Circle</button>
+                <button onclick="setTool('triangle')">Triangle</button>
+                <button onclick="setTool('diamond')">Diamond</button>
+                <button onclick="setTool('star')">Star</button>
+                <button onclick="setTool('dotted-line')">· · Dotted Line</button>
+                <button onclick="setTool('line-shape')">Line</button>
+            </div>
+        </div>
+
+        <input type="color" id="colorPicker" value="#000000">
+        <div class="size-control">
+            <span>🖊️</span>
+            <input type="range" id="sizePicker" min="1" max="50" value="5" oninput="updateSize(this.value)">
+            <span id="sizeLabel">5px</span>
+        </div>
+        <button onclick="undo()" class="action-btn">Undo</button>
+        <button onclick="redo()" class="action-btn">Redo</button>
+        <div class="divider"></div>
+        <button id="btn-front" onclick="bringToFront()" class="action-btn layer-btn" title="Bring to Front" disabled>⬆
+            Front</button>
+        <button id="btn-fwd" onclick="bringForward()" class="action-btn layer-btn" title="Bring Forward" disabled>↑
+            Fwd</button>
+        <button id="btn-bwd" onclick="sendBackward()" class="action-btn layer-btn" title="Send Backward" disabled>↓
+            Bwd</button>
+        <button id="btn-back" onclick="sendToBack()" class="action-btn layer-btn" title="Send to Back" disabled>⬇
+            Back</button>
+        <div class="divider"></div>
+        <button onclick="clearBoard()" class="danger-btn">Clear</button>
+        <button onclick="saveImage()" class="success-btn">Save</button>
+    </div>
+
+    <div class="main-container">
+        <div class="canvas-container" id="canvas-wrapper">
+            <div id="cursor"></div>
+            <canvas id="whiteboard"></canvas>
+            <!-- Selection overlay -->
+            <div id="sel-overlay">
+                <div class="sel-handle" data-h="0"></div>
+                <div class="sel-handle" data-h="1"></div>
+                <div class="sel-handle" data-h="2"></div>
+                <div class="sel-handle" data-h="3"></div>
+                <div class="sel-handle" data-h="4"></div>
+                <div class="sel-handle" data-h="5"></div>
+                <div class="sel-handle" data-h="6"></div>
+                <div class="sel-handle" data-h="7"></div>
+                <div id="sel-body"></div>
+            </div>
+        </div>
+        <div class="chat-sidebar">
+            <div class="chat-sidebar-header">💬 Chat</div>
+            <ul id="chat-messages"></ul>
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Chat..."
+                    onkeydown="if(event.key==='Enter') sendMessage()">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
