@@ -18,10 +18,10 @@ A real-time, collaborative whiteboard application that allows users to draw, wri
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** HTML5 Canvas, CSS3, JavaScript (or React/Next.js if used)
-- **Backend:** Node.js, Express (if applicable)
-- **Real-time Engine:** Socket.io (if applicable)
-- **Deployment:** Vercel / Netlify / GitHub Pages
+- **Frontend:** HTML5 Canvas, CSS3, JavaScript
+- **Backend:** Node.js, Express 
+- **Real-time Engine:** Socket.io 
+- **Deployment:** RAILWAY.com / GitHub Pages
 
 ## 📦 Installation & Setup
 
