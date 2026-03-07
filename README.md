@@ -30,3 +30,5 @@ Follow these steps to get the project running locally:
 1. **Clone the repository:**
    ```bash
    git clone [https://github.com/vikas-panchal228/whiteboard-app.git](https://github.com/vikas-panchal228/whiteboard-app.git)
+2. **Run direct by click on link below:**
+   whiteboard-app-production-bd12.up.railway.app
