@@ -1,4 +1,4 @@
-# Whiteboard App 🎨
+# Whiteboard App 
 
 A real-time, collaborative whiteboard application that allows users to draw, write, and share ideas visually. Built with a focus on simplicity and smooth user experience.
 
@@ -6,7 +6,7 @@ A real-time, collaborative whiteboard application that allows users to draw, wri
 ![Stars](https://img.shields.io/github/stars/vikas-panchal228/whiteboard-app)
 ![Issues](https://img.shields.io/github/issues/vikas-panchal228/whiteboard-app)
 
-## 🚀 Features
+## Features
 
 - **Freehand Drawing:** Smooth pen tool for sketching and writing.
 - **Shapes & Tools:** Easily create rectangles, circles, and lines.
@@ -16,14 +16,14 @@ A real-time, collaborative whiteboard application that allows users to draw, wri
 - **Download/Save:** Export your creations as image files (PNG/JPG).
 - **Responsive Design:** Works seamlessly on desktops, tablets, and mobile devices.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend:** HTML5 Canvas, CSS3, JavaScript
 - **Backend:** Node.js, Express 
 - **Real-time Engine:** Socket.io 
 - **Deployment:** RAILWAY.com / GitHub Pages
 
-## 📦 Installation & Setup
+## Installation & Setup
 
 Follow these steps to get the project running locally:
 
